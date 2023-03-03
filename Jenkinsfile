@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage("SCM") {
 			steps {
-				git 'https://github.com/himanshu27797/java-docker-app.git'
+				git 'https://github.com/himanshu27797/java-app.git'
 				}
 			}
 
