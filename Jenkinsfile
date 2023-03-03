@@ -10,7 +10,7 @@ pipeline {
 		stage("build") {
 			steps {
 				sh 'sudo mvn dependency:purge-local-repository'
-				sh 'mvn clean package'
+				sh 'sudo mvn clean package'
 				}
 			}
 		stage("Image") {
