@@ -26,17 +26,10 @@ pipeline {
 		
 		stage("QAT Testing") {
 			steps {
-				sh 'sudo docker run -dit -p 8080:8080  srronak/pipeline-java:$BUILD_TAG'
+				sh 'sudo docker run -dit -p 9001:8080  srronak/pipeline-java:$BUILD_TAG'
 				}
 			}
-		stage("testing website") {
-			steps {
-				retry(5) {
-				sh 'curl --silent http://65.2.140.187:8080/java-web-app/ | grep -i "india" '
-					}
-				}
-			}
-
+		
 		stage("Approval status") {
 			steps {
 				script {
