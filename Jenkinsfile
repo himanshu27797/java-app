@@ -38,9 +38,9 @@ pipeline {
 		}
 		stage("Prod Env") {
 			steps {
-			 sshagent(['ubuntu']) {
-			    sh 'ssh -o StrictHostKeyChecking=no ubuntu@65.2.140.187 sudo docker rm -f $(sudo docker ps -a -q)' 
-	                    sh "ssh -o StrictHostKeyChecking=no ubuntu@65.2.140.187 sudo docker run  -d  -p  49153:8080  srronak/javatest-app:$BUILD_TAG"
+			 sshagent(['ec2-user']) {
+			    sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.109.200.128 sudo docker rm -f $(sudo docker ps -a -q)' 
+	                    sh "ssh -o StrictHostKeyChecking=no ec2-user@3.109.200.128 sudo docker run  -d  -p  9001:8080  srronak/javatest-app:$BUILD_TAG"
 				}
 			}
 		}
