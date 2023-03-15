@@ -36,9 +36,7 @@ pipeline {
                 echo 'userInput: ' + userInput
 					}
 				}	
-		}
-				}
-			}
+
 		}
 	}
 }
